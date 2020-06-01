@@ -3,7 +3,8 @@ import axios from "axios";
 
 async function getUserPosts(userId) {
   let url = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
-  const response = await axios.get(url)
+  const header = {headers: {"Access-Control-Allow-Origin" : "*" } }  
+  const response = await axios.get(url, header)
   return response;
 }
 
