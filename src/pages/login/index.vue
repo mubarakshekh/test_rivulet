@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Loading :loading="loading" />
-    <span class="custom-error">{{error}}</span>
+    <span class="text-danger">{{error}}</span>
     <form @submit.prevent="onLogin">
-      <input type="text" v-model="input" placeholder="Input" />
-      <input type="submit" value="Login" />
+      <input type="text" class="form-control" v-model="input" placeholder="Email or ID" />
+      <input type="submit" class="form-control btn btn-success" value="Login" />
     </form>
+    <Loading :loading="loading" />
   </div>
 </template>
 
@@ -23,10 +23,10 @@ export default {
     return {
       input: "",
       error: "",
-      loading: false,
+      loading: false
     };
   },
- 
+
   mounted() {
     localStorage.clear();
   },
@@ -59,5 +59,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
 </style>

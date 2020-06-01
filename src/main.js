@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import Login from "./pages/login";
 import AllPosts from "./pages/posts";
+import 'bootstrap/dist/css/bootstrap.css';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)

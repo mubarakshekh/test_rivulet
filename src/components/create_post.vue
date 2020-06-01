@@ -8,9 +8,9 @@
       <div class="pad-5">
         <textarea v-model="body" rows="2" class="form-control"  placeholder="Body" />
       </div>
-      <input :disabled ="!title && !body"  type="submit" class="submit-button"  value="Submit" />
+      <input :disabled ="!title && !body"  type="submit" class="btn btn-success"  value="Submit" />
     </form>
-    <span class = 'custom-error'>{{error}}</span>
+    <span class = 'text-danger'>{{error}}</span>
     <Loading :loading="loading" />
   </div>
 </template>

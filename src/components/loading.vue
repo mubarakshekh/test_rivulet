@@ -1,26 +1,23 @@
 <template>
-  <div >
- 
-
- <ring-loader :loading="loading" :color="color1" :size="size"></ring-loader>
-
+  <div>
+    <moon-loader :loading="loading" :color="color1" ></moon-loader>
   </div>
 </template>
 
 <script>
-import RingLoader from 'vue-spinner/src/RingLoader.vue'
+import MoonLoader from "vue-spinner/src/MoonLoader.vue";
 
 export default {
-  name: 'Loading',
-   props: ["loading"],
-    data () {
+  name: "Loading",
+  props: ["loading"],
+  data() {
     return {
-      color1: '#5bc0de',
-      size: '45px',
-    }
+      color1: "#5bc0de",
+    
+    };
   },
-    components: {
-    RingLoader,
+  components: {
+    MoonLoader
   }
-}
+};
 </script>

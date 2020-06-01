@@ -1,16 +1,18 @@
 <template>
   <div> 
     <div class = 'align-right'>
-    <button @click="logout" class = 'logout-button'>Logout</button>
+    <button @click="logout" class = 'btn btn-danger'>Logout</button>
     </div> 
+    <WelcomeUser/>
     <CreatePost @addUserPosts="addUserPosts" />
     <Posts :getUserPosts="getUserPosts" />
     <Loading :loading="loading" />
-    <p class = 'custom-error'>{{error}}</p>
+    <p class = 'text-danger'>{{error}}</p>
   </div>
 </template>
 
 <script>
+import WelcomeUser from '../../components/welcome_message'
 import CreatePost from "../../components/create_post";
 import Posts from "../../components/posts";
 import { dataService } from "../../service/dataService";
@@ -18,6 +20,7 @@ import Loading from "../../components/loading";
 export default {
   name: "AllPosts",
   components: {
+    WelcomeUser,
     CreatePost,
     Posts,
     Loading

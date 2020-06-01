@@ -10,11 +10,12 @@
     <p v-if="commentDisplay" class="pt-10 green-border-top">
       <span class="comment-span">Comment:</span>
       {{commentDisplay}}
+      <span class="font-weight-bold text-info">by {{user.name}}</span>
     </p>
-    <span class="custom-error">{{message}}</span>
+    <span class="text-danger">{{message}}</span>
     <form @submit.prevent="addPostComment">
       <textarea v-model="comment" rows="2" class="form-control" placeholder="Comments" />
-      <input type="submit" class="submit-button" :disabled="!comment" value="Submit" />
+      <input type="submit" class="btn btn-success" :disabled="!comment" value="Submit" />
     </form>
     <Loading :loading="loading" />
   </div>
@@ -34,7 +35,8 @@ export default {
       comment: "",
       commentDisplay: "",
       message: "",
-      loading: false
+      loading: false,
+      user: JSON.parse(localStorage.getItem(this.$route.params.id))
     };
   },
 
