@@ -1,6 +1,5 @@
 import Login from "../pages/login";
 import AllPosts from "../pages/posts";
-
 const routes = [
   {
     path: '/',
@@ -14,8 +13,7 @@ const routes = [
     beforeEnter: guard
   }
 ]
-
-function guard (to, from, next) {
+function guard(to, from, next) {
   const id = to.params.id || from.params.id
   if (localStorage.getItem(id)) {
     next()
@@ -24,6 +22,4 @@ function guard (to, from, next) {
     next('/')
   }
 }
-
-
 export default routes;
